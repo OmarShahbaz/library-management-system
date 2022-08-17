@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Thriller extends Book{
+public class Thriller extends Book implements Crud{
 	private String voilence;
 	List<Thriller> thrillers = new ArrayList<>();
 	public Thriller() {
@@ -21,7 +21,8 @@ public class Thriller extends Book{
 	public void setVoilence(String voilence) {
 		this.voilence = voilence;
 	}
-	void showAll() {
+	@Override
+	public void showAll() {
 		String leftStringFormat = "|  %-11s  |  %-14s  |  %-16s  |  %-11d  |  %-11s  |%n";
 		System.out.format("+---------------+------------------+--------------------+---------------+---------------+%n");
 		System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Voilence   |");
@@ -35,7 +36,8 @@ public class Thriller extends Book{
 		}
 		System.out.format("+---------------+------------------+--------------------+---------------+---------------+%n");
 	}
-	void addBook() {
+	@Override
+	public void addBook() {
 		boolean stay = true;
 		do {
 			Scanner sc= new Scanner(System.in);
@@ -59,7 +61,8 @@ public class Thriller extends Book{
 			if(checkStay=='n' || checkStay=='N') stay = false;
 		}while(stay);
 	}
-	void updateBook() {
+	@Override
+	public void updateBook() {
 		if(thrillers.isEmpty()) {
 			System.out.format("+---------------+------------------+--------------------+---------------+---------------+%n");
 			System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Voilence   |");
@@ -91,7 +94,8 @@ public class Thriller extends Book{
 			System.out.format("+---------------+------------------+--------------------+---------------+---------------+%n");
 		}
 	}
-	void removeBook() {
+	@Override
+	public void removeBook() {
 		if(thrillers.isEmpty()) {
 			System.out.format("+---------------+------------------+--------------------+---------------+---------------+%n");
 			System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Voilence   |");

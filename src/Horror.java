@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Horror extends Book{
+public class Horror extends Book implements Crud{
 	private String genre;
 	List<Horror> horrors = new ArrayList<>();
 	public Horror() {
@@ -26,8 +26,8 @@ public class Horror extends Book{
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	
-	void showAll() {
+	@Override
+	public void showAll() {
 		String leftStringFormat = "|  %-11s  |  %-14s  |  %-16s  |  %-11d  |  %-8s  |%n";
 		System.out.format("+---------------+------------------+--------------------+---------------+------------+%n");
 		System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Genre   |");
@@ -41,7 +41,8 @@ public class Horror extends Book{
 		}
 		System.out.format("+---------------+------------------+--------------------+---------------+------------+%n");
 	}
-	void addBook() {
+	@Override
+	public void addBook() {
 		boolean stay = true;
 		do {
 			Scanner sc= new Scanner(System.in);
@@ -65,8 +66,8 @@ public class Horror extends Book{
 			if(checkStay=='n' || checkStay=='N') stay = false;
 		}while(stay);
 	}
-	
-	void updateBook() {
+	@Override
+	public void updateBook() {
 		if(horrors.isEmpty()) {
 			System.out.format("+---------------+------------------+--------------------+---------------+------------+%n");
 			System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Genre   |");
@@ -98,7 +99,8 @@ public class Horror extends Book{
 			System.out.format("+---------------+------------------+--------------------+---------------+------------+%n");
 		}
 	}
-	void removeBook() {
+	@Override
+	public void removeBook() {
 		if(horrors.isEmpty()) {
 			System.out.format("+---------------+------------------+--------------------+---------------+------------+%n");
 			System.out.println("|    Book       |     Author       |     Publisher      |  PublishYear  |    Genre   |");
