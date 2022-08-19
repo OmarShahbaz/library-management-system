@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class LibraryDemo {
 	
-	public static void main(String args[]) {
-		Horror horror = new Horror();
-		Comedy comedy = new Comedy();
-		Thriller thriller = new Thriller();
+	public static void main(String args[]) {1
+		Crud crudHorror = new Horror();
+		Crud crudComedy = new Comedy();
+		Crud crudThriller = new Thriller();
 		String[] genre = new String[3];
 		boolean stay = true;
 		genre[0] = "Horror";
@@ -47,16 +47,16 @@ public class LibraryDemo {
 					int selection = obj.nextInt();
 					switch(selection) {//horror
 					case 1://add
-						horror.addBook();
+						crudHorror.addBook();
 						break;
 					case 2://update
-						horror.updateBook();
+						crudHorror.updateBook();
 						break;
 					case 3://remove
-						horror.removeBook();
+						crudHorror.removeBook();
 						break;
 					case 4://view
-						horror.showAll();
+						crudHorror.showAll();
 						break;
 					}
 					System.out.println("Do you want to perform more actions on Horror Genre (Y/N)?");
@@ -83,16 +83,16 @@ public class LibraryDemo {
 					int selectionComedy = objComedy.nextInt();
 					switch(selectionComedy) {//comedy
 					case 1://add
-						comedy.addBook();
+						crudComedy.addBook();
 						break;
 					case 2://update
-						comedy.updateBook();
+						crudComedy.updateBook();
 						break;
 					case 3://remove
-						comedy.removeBook();
+						crudComedy.removeBook();
 						break;
 					case 4://view
-						comedy.showAll();
+						crudComedy.showAll();
 						break;
 					}
 					System.out.println("Do you want to perform more actions on Comedy Genre (Y/N)?");
@@ -119,16 +119,16 @@ public class LibraryDemo {
 					int selectionThriller = objThriller.nextInt();
 					switch(selectionThriller) {//comedy
 					case 1://add
-						thriller.addBook();
+						crudThriller.addBook();
 						break;
 					case 2://update
-						thriller.updateBook();
+						crudThriller.updateBook();
 						break;
 					case 3://remove
-						thriller.removeBook();
+						crudThriller.removeBook();
 						break;
 					case 4://view
-						thriller.showAll();
+						crudThriller.showAll();
 						break;
 					}
 					System.out.println("Do you want to perform more actions on Thriller Genre (Y/N)?");
