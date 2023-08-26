@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class LibraryDemo {
 	
-	public static void main(String args[]) {1
+	public static void main(String args[]) {
 		Crud crudHorror = new Horror();
 		Crud crudComedy = new Comedy();
 		Crud crudThriller = new Thriller();
